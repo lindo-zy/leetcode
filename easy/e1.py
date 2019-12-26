@@ -22,13 +22,13 @@ class Solution:
 #         :type target: int
 #         :rtype: List[int]
 #         """
-#         hashmap = {}
-#         for index, num in enumerate(nums):
-#             another_num = target - num
-#             if another_num in hashmap:
-#                 return [hashmap[another_num], index]
-#             hashmap[num] = index
-#         return None
+        hashmap = {}
+        for index, num in enumerate(nums):
+            another_num = target - num
+            if another_num in hashmap:
+                return [hashmap[another_num], index]
+            hashmap[num] = index
+        return None
 
 
 if __name__ == '__main__':
