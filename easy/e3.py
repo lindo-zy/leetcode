@@ -27,3 +27,4 @@ class Solution2:
             x = (x % div) // 10
             div //= 100
         return True
+
