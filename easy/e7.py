@@ -26,7 +26,7 @@ if __name__ == '__main__':
     l1 = [1, 2, 4]
     l1 = ListNode(1)
     l1.next = ListNode(2)
-    print(l1.val)
+    l1.next.next = ListNode(4)
     print(l1.next.val)
 
     # l2 = ListNode([1, 3, 4])
