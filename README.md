@@ -768,7 +768,79 @@ if __name__ == '__main__':
 代码：
 
 ```python
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        if n == 1:
+            return "1"
+        return self.bs(self.countAndSay(n - 1))
 
+    def bs(self, string):
+        lis = list(string)
+        lis.append('0')  # 末尾补一个，方便后续计数
+        lis1 = []
+        re = 0
+        i = 0
+        while i < len(lis) - 1:
+            if lis[i] != lis[i + 1]:
+                lis1.append(str(i + 1 - re))  # 当前计录的值的个数
+                lis1.append(lis[i])  # 当前记录的值
+                re = i + 1
+            i = i + 1
+        s = ''.join(lis1)  # 列表转字符串
+        return s
+
+```
+
+思路：
+
+```
+
+```
+
+
+
+
+
+
+
+题目描述：[最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+
+```
+给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+示例:
+
+输入: [-2,1,-3,4,-1,2,1,-5,4],
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+进阶:
+
+如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/maximum-subarray
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```
+
+
+
+代码：
+
+```python
+class Solution:
+    def maxSubArray(self, nums) -> int:
+        for i in range(1, len(nums)):
+            nums[i] = nums[i] + max(nums[i - 1], 0)
+        return max(nums)
+
+
+if __name__ == '__main__':
+    s = Solution()
+    nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+    # nums = [-1,-2,-3]
+    # [4, -1, 2, 1]
+    result = s.maxSubArray(nums)
+    print(result)
 ```
 
 思路：
