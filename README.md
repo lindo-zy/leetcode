@@ -903,6 +903,131 @@ if __name__ == '__main__':
 
 
 
+
+
+题目描述：[加一](https://leetcode-cn.com/problems/plus-one/)
+
+```
+给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+
+你可以假设除了整数 0 之外，这个整数不会以零开头。
+
+示例 1:
+
+输入: [1,2,3]
+输出: [1,2,4]
+解释: 输入数组表示数字 123。
+示例 2:
+
+输入: [4,3,2,1]
+输出: [4,3,2,2]
+解释: 输入数组表示数字 4321。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/plus-one
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```
+
+
+
+代码：
+
+```python
+class Solution:
+    def plusOne(self, digits):
+        return list(map(int, str(int(''.join([str(i) for i in digits])) + 1)))
+
+
+if __name__ == '__main__':
+    s = Solution()
+    digits = [1, 2, 3]  # [1,2,4]
+    digits = [4, 3, 2, 1]  # [4,3,2,2]
+    # digits = [0]  # [1]
+    # digits = [9, 9, 9]  # [1,0,0,0]
+    result = s.plusOne(digits)
+    print(result)
+
+```
+
+思路：
+
+```
+
+```
+
+
+
+
+
+题目描述：[二进制求和](https://leetcode-cn.com/problems/add-binary/)
+
+```
+给定两个二进制字符串，返回他们的和（用二进制表示）。
+
+输入为非空字符串且只包含数字 1 和 0。
+
+示例 1:
+
+输入: a = "11", b = "1"
+输出: "100"
+示例 2:
+
+输入: a = "1010", b = "1011"
+输出: "10101"
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/add-binary
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```
+
+
+
+代码：
+
+```python
+#!/usr/bin/python3
+# -*- coding:utf-8 -*-
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        return bin(int(a, 2) + int(b, 2))[2:]
+
+
+class Solution2:
+    def addBinary(self, a: str, b: str) -> str:
+        r, p = '', 0
+        d = len(b) - len(a)
+        a = '0' * d + a
+        b = '0' * -d + b
+        for i, j in zip(a[::-1], b[::-1]):
+            s = int(i) + int(j) + p
+            r = str(s % 2) + r
+            p = s // 2
+
+        return '1' + r if p else r
+
+
+if __name__ == '__main__':
+    s = Solution2()
+    a = '11'
+    b = '1'  # 01
+    a = '1010'
+    b = '1011'
+    result = s.addBinary(a, b)
+    print(result)  # 100 10101
+
+
+```
+
+思路：
+
+```
+
+```
+
+
+
 ------
 
 
