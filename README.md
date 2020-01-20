@@ -1163,6 +1163,89 @@ if __name__ == '__main__':
 
 
 
+
+
+题目描述：[删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
+
+```
+给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
+
+示例 1:
+
+输入: 1->1->2
+输出: 1->2
+示例 2:
+
+输入: 1->1->2->3->3
+输出: 1->2->3
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```
+
+
+
+代码：
+
+```python
+
+```
+
+思路：
+
+```
+
+```
+
+
+
+
+
+题目描述：[合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
+
+```
+给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+
+说明:
+
+初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
+你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
+示例:
+
+输入:
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6],       n = 3
+
+输出: [1,2,2,3,5,6]
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/merge-sorted-array
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```
+
+
+
+代码：
+
+```python
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        nums1[m:m+n]=nums2
+        nums1.sort()
+```
+
+思路：
+
+```
+
+```
+
+
+
 ------
 
 

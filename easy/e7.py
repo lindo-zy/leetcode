@@ -23,7 +23,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    l1 = [1, 2, 4]
+    # l1 = [1, 2, 4]
     l1 = ListNode(1)
     l1.next = ListNode(2)
     l1.next.next = ListNode(4)

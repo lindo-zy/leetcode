@@ -14,3 +14,4 @@ if __name__ == '__main__':
     # [4, -1, 2, 1]
     result = s.maxSubArray(nums)
     print(result)
+
