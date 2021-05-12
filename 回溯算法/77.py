@@ -12,8 +12,8 @@ class Solution:
                 res.append(tmp)
                 return
             for i in range(start, n + 1):
-                if i > n - (k - len(tmp)) + 1:
-                    break
+                # if i > n - (k - len(tmp)) + 1:
+                #     break
                 backtrace(i + 1, tmp + [i])
 
         backtrace(1, [])
