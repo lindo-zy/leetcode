@@ -8,13 +8,14 @@ class Solution:
         res = []
         s = '.' * n
 
-        def backtrace(path, i, col, z_diag, f_diag):
-            if i == n:
+        def backtrace(path, row, col, z_diag, f_diag):
+            if row == n:
                 res.append(path)
                 return
             for j in range(n):
-                if j not in col and i - j not in z_diag and i + j not in f_diag:
-                    backtrace(path + [s[:j] + 'Q' + s[j + 1:]], i + 1, col + [j], z_diag | {i - j}, f_diag | {i + j})
+                if j not in col and row - j not in z_diag and row + j not in f_diag:
+                    backtrace(path + [s[:j] + 'Q' + s[j + 1:]], row + 1, col + [j], z_diag | {row - j},
+                              f_diag | {row + j})
 
         backtrace([], 0, [], set(), set())
 
