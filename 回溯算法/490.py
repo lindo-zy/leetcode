@@ -9,6 +9,7 @@ class Solution:
         visited = set()
         dirs = [0, 1, 0, -1, 0]
         row, col = len(maze), len(maze[0])
+        m, n = len(maze), len(maze[0])
 
         # DFS
         def dfs(i, j):
