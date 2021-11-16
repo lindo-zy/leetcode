@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding:utf-8 -*-
 # Definition for a binary tree node.
-from collections import Counter
 
 from gen_tree import generate_tree
 
@@ -20,6 +19,7 @@ class Solution:
         def dfs(root, record):
             if root:
                 record ^= (1 << root.val)
+                # 计算有多少个不同的数字
                 if not (root.left or root.right):
                     if bin(record).count("1") < 2:
                         self.ans += 1
