@@ -23,6 +23,7 @@ if __name__ == '__main__':
     listB = [5, 0, 1, 8, 4, 5]
     skipA = 2
     skipB = 3
-    from gen_node import ListNode
+    from gen_node import gen_node, ListNode
 
+    # print(s.getIntersectionNode(gen_node(listA), gen_node(listB)))
     print(s.getIntersectionNode(ListNode(listA), ListNode(listB)))
