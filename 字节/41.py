@@ -4,35 +4,21 @@ from typing import List
 
 
 class Solution:
-    def minWindow(self, s: str, t: str) -> str:
-        from collections import defaultdict
-        find = defaultdict(int)
-        for i in t:
-            find[i] += 1
-        min_len = float('inf')
-        res = ''
-
-        n = len(s)
-        counter = len(t)
-        left = right = 0
-        while right < n:
-            if find[s[right]] > 0:
-                counter -= 1
-            find[s[right]] -= 1
-            right += 1
-            while counter == 0:
-                if min_len > right - left:
-                    min_len = right - left
-                    res = s[left:right]
-                if find[s[left]] == 0:
-                    counter += 1
-                find[s[left]] += 1
-                left += 1
-        return res
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        n = len(nums)
+        for i in range(n):
+            while 1 <= nums[i] <= n and nums[i] != nums[nums[i] - 1]:
+                nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
+        # 查看下标是否对应
+        for i in range(n):
+            cur = i + 1
+            if cur != nums[i]:
+                return cur
+        # 当前数组如果没有缺失，则为数组长度的下一个数，如当前为[1,2,3],下一个为4
+        return n + 1
 
 
 if __name__ == '__main__':
     sn = Solution()
-    s = "ADOBECODEBANC"
-    t = "ABC"
-    print(sn.minWindow(s, t))
+    nums = [3, 4, -1, 1]
+    print(sn.firstMissingPositive(nums))
