@@ -11,17 +11,22 @@ from typing import Optional
 
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head or not head.next:
-            return head
+        dummy = ListNode(None, next=head)
+        p = dummy
+        cur = head
+        while cur:
+            while cur.next and cur.val == cur.next.val:
+                cur = cur.next
 
-        if head.val != head.next.val:
-            head.next = self.deleteDuplicates(head.next)
-        else:
-            move = head.next
-            while move and head.val == move.val:
-                move = move.next
-            return self.deleteDuplicates(move)
-        return head
+            if p.next == cur:
+                # 移动
+                p = p.next
+            else:
+                # 跳过重复元素
+                p.next = cur.next
+            # 移动
+            cur = cur.next
+        return dummy.next
 
 
 if __name__ == '__main__':

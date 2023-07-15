@@ -9,7 +9,7 @@ class Solution:
             n1 = int(num1[i]) if i >= 0 else 0
             n2 = int(num2[j]) if j >= 0 else 0
 
-            s = n1 + n2
+            s = carry + n1 + n2
 
             if s >= 10:
                 carry = 1
