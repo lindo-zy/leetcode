@@ -20,8 +20,10 @@ class Solution:
         while h.next:
             tmp = head.next
             tmp2 = h.next
+            
             head.next = h
             h.next = tmp
+
             head = tmp
             h = tmp2
 
