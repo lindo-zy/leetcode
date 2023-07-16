@@ -8,6 +8,13 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
+        n = len(matrix)
+        for i in range(n):  # i是行数
+            for j in range(i):  # j是列数
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]  # 实现对角线对称
+
+        for m in range(n):
+            matrix[m] = matrix[m][::-1]  # 每一行逆序
 
 
 if __name__ == '__main__':
