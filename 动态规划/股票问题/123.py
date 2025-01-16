@@ -26,11 +26,11 @@ class Solution:
         return max(dp0, dp2, dp4)
 
     def maxProfit2(self, prices: List[int]) -> int:
-        if prices == []:
+        if not prices:
             return 0
         length = len(prices)
         # 结束时的最高利润=[天数][是否持有股票][卖出次数]
-        dp = [[[0, 0, 0], [0, 0, 0]] for i in range(0, length)]
+        dp = [[[0, 0, 0], [0, 0, 0]] for i in range(length)]
         # 第一天休息
         dp[0][0][0] = 0
         # 第一天买入
@@ -61,3 +61,4 @@ if __name__ == '__main__':
     s = Solution()
     prices = [3, 3, 5, 0, 0, 3, 1, 4]  # 6
     print(s.maxProfit(prices))
+    print(s.maxProfit2(prices))

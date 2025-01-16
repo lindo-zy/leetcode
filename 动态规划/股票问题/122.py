@@ -5,7 +5,7 @@ from typing import List
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        if prices == None and len(prices) == 0:
+        if not prices:
             return 0
 
         profit = 0
